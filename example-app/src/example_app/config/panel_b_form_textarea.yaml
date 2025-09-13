@@ -1,0 +1,8 @@
+type: form
+title: "Notes (TextArea Demo)"
+fields:
+  - name: "notes"
+    label: "Notes"
+    type: "textarea"
+    max_lines: 3
+    required: false

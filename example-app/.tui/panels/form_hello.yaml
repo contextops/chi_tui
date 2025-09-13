@@ -1,0 +1,14 @@
+type: form
+title: "Simple Hello Form"
+schema_cmd: "${APP_BIN} schema hello"
+submit_cmd: "${APP_BIN} hello"
+fields:
+  - name: name
+    label: "Your Name"
+    type: text
+    placeholder: "Enter your name..."
+    required: true
+  - name: shout
+    label: "Shout?"
+    type: bool
+    default: false

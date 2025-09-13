@@ -1,0 +1,132 @@
+header: "CHI TUI - List Patterns"
+horizontal_menu:
+  - id: "docs"
+    title: "Docs"
+    config: "chi-index.yaml"
+  - id: "lists"
+    title: "Lists"
+    # Current screen
+  - id: "forms"
+    title: "Forms"
+    config: "forms.yaml"
+  - id: "panels"
+    title: "Panels"
+    config: "panels.yaml"
+  - id: "progress"
+    title: "Progress"
+    config: "progress.yaml"
+  - id: "advanced"
+    title: "Advanced"
+    config: "advanced.yaml"
+
+menu:
+  - id: "header_static"
+    title: "📋 Static Lists"
+    widget: "header"
+    
+  - id: "simple_menu"
+    title: "Simple Menu (this menu itself!)"
+    widget: "markdown"
+    content: "# Simple Menu\n\nThis very menu you're navigating is a simple list!\n\nSimple menus are just lists of items with:\n- Titles\n- Optional commands\n- Optional widgets\n\nUse arrow keys to navigate and Enter to select."
+    
+  - id: "nested_menu"
+    title: "Nested/Hierarchical Menu"
+    widget: "markdown"
+    content: "# Nested Menu\n\nExpand the tree below to see nested items!\n\nHierarchical menus support:\n- Multiple levels of nesting\n- Collapsible/expandable nodes\n- Commands at any level\n\nUse arrow keys to expand/collapse."
+    children:
+      - id: "child_1"
+        title: "└─ Child Item 1"
+        command: "${APP_BIN} hello --name 'Child 1'"
+      - id: "child_2"
+        title: "└─ Child Item 2"
+        command: "${APP_BIN} hello --name 'Child 2'"
+      - id: "nested_deeper"
+        title: "└─ Nested Deeper"
+        children:
+          - id: "grandchild_1"
+            title: "    └─ Grandchild 1"
+            command: "${APP_BIN} hello --name 'Deep!'"
+            
+  - id: "header_dynamic"
+    title: "🔄 Dynamic Lists"
+    widget: "header"
+    
+  - id: "lazy_list"
+    title: "Lazy Loading List"
+    widget: "lazy_items"
+    command: "${APP_BIN} list-items"
+    unwrap: "data.items"
+    initial_text: "Press Enter to load items..."
+    
+  - id: "auto_list"
+    title: "Auto-loading List"
+    widget: "autoload_items"
+    command: "${APP_BIN} list-items"
+    unwrap: "data.items"
+    auto_expand: true
+    
+  - id: "filtered_list"
+    title: "Filtered List (Tasks)"
+    widget: "autoload_items"
+    command: "${APP_BIN} list-tasks --project alpha"
+    unwrap: "data.items"
+    auto_expand: true
+    
+  - id: "header_interactive"
+    title: "⚡ Interactive Lists"
+    widget: "header"
+    
+  - id: "list_with_actions"
+    title: "List with Actions"
+    widget: "panel"
+    panel_layout: "horizontal"
+    panel_size: "1:2"
+    pane_b_yaml: "panels/list_actions.yaml"
+    
+  - id: "master_detail"
+    title: "Master-Detail Pattern"
+    widget: "panel"
+    panel_layout: "horizontal"
+    panel_size: "2:3"
+    pane_b_yaml: "panels/task_detail.yaml"
+    # Static tasks to demonstrate selecting on the left (A) and viewing details on the right (B)
+    children:
+      - id: "proj_alpha"
+        title: "▸ Project Alpha"
+        children:
+          - id: "a-1"
+            title: "• Design API [open]"
+            command: "${APP_BIN} task-detail --project alpha --task a-1"
+          - id: "a-2"
+            title: "• Implement SDK [in_progress]"
+            command: "${APP_BIN} task-detail --project alpha --task a-2"
+      - id: "proj_bravo"
+        title: "▸ Project Bravo"
+        children:
+          - id: "b-1"
+            title: "• Prototype UI [open]"
+            command: "${APP_BIN} task-detail --project bravo --task b-1"
+          - id: "b-2"
+            title: "• Write docs [open]"
+            command: "${APP_BIN} task-detail --project bravo --task b-2"
+    
+  - id: "header_special"
+    title: "📡 Special Lists"
+    widget: "header"
+    
+  - id: "streaming_list"
+    title: "Streaming Updates"
+    stream: true
+    command: "${APP_BIN} simulate-progress --steps 10"
+    
+  - id: "paginated_list"
+    title: "Large Dataset (1000 items, paginated)"
+    widget: "lazy_items"
+    command: "${APP_BIN} list-large --count 1000 --page 1 --per-page 50"
+    unwrap: "data.items"
+    initial_text: "Press Enter to load page 1 (50 items per page)..."
+    
+  - id: "error_handling"
+    title: "Error Handling Demo"
+    command: "${APP_BIN} list-items --simulate-error"
+

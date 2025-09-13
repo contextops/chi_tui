@@ -1,0 +1,11 @@
+type: form
+title: "Choose Tags (Dynamic)"
+fields:
+  - name: "tags"
+    label: "Tags"
+    type: "multiselect"
+    options_cmd: "${APP_BIN} list-tags"
+    unwrap: "data.items[].id/title"
+    required: true
+submit:
+  command: "${APP_BIN} choose-tags"

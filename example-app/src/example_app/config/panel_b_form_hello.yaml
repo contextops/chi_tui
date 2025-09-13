@@ -1,0 +1,14 @@
+type: form
+title: "Hello Form"
+fields:
+  - name: "name"
+    label: "Your name"
+    type: "text"
+    default: "Ada"
+    required: true
+  - name: "shout"
+    label: "Uppercase"
+    type: "checkbox"
+    default: false
+submit:
+  command: "${APP_BIN} hello"

@@ -1,0 +1,4 @@
+# Panel showing current configuration
+widget: "json-viewer"
+command: "${APP_BIN} show-config"
+unwrap: "data.content"

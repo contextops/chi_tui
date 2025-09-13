@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "example-app"
+version = "0.0.1"
+description = "Example app using chi-tui-sdk"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "chi-sdk>=0.0.1",
+  "click>=8",
+  "pydantic>=2",
+]
+authors = [{name = "CHI TUI", email = "devnull@example.com"}]
+license = {text = "Apache-2.0 (see LICENSE)"}
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+]
+
+[project.scripts]
+example-app = "example_app.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

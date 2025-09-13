@@ -1,0 +1,12 @@
+type: markdown
+title: "Task Details"
+text: |
+  # Task Details
+
+  Select a task under “Master-Detail Pattern [[7]]” in the left pane (A).
+  The details will render here in Pane B.
+
+  Tips:
+  - Use Enter on a task to open details
+  - Press Backspace to return to the previous view
+  - Press j to toggle raw JSON

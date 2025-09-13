@@ -1,0 +1,19 @@
+type: form
+title: "Settings (Grouped Auto)"
+submit:
+  command: "${APP_BIN} save-settings"
+overrides:
+  username:
+    group: "Account"
+    order: 1
+  email:
+    group: "Account"
+    order: 2
+  theme:
+    group: "Preferences"
+    order: 1
+    widget: "select"
+    options: ["system", "light", "dark"]
+  newsletter:
+    group: "Preferences"
+    order: 2

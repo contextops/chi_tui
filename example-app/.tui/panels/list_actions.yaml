@@ -1,0 +1,42 @@
+type: menu
+title: "Actions"
+menu:
+  - id: "hdr_quick"
+    title: "⚡ Quick Actions"
+    widget: "header"
+
+  - id: "hello_jane"
+    title: "✅ Say Hello (Jane)"
+    command: "${APP_BIN} hello --name Jane"
+
+  - id: "sum_123"
+    title: "🧮 Sum 1 + 2 + 3"
+    command: "${APP_BIN} sum-numbers --numbers 1 --numbers 2 --numbers 3"
+
+  - id: "show_shortcuts"
+    title: "⌨️ Show Shortcuts"
+    command: "${APP_BIN} show-shortcuts"
+
+  - id: "hdr_more"
+    title: "📚 More"
+    widget: "header"
+
+  - id: "md_inline"
+    title: "📖 Inline Markdown"
+    widget: "markdown"
+    content: |
+      # Example Actions
+
+      This list demonstrates actions shown in Pane B:
+      - Hello returns a greeting
+      - Sum computes a total
+      - Shortcuts shows key bindings
+
+  - id: "watchdog_demo"
+    title: "🛡️ System Checks (Watchdog)"
+    widget: "watchdog"
+    commands:
+      - "echo 'Check 1: OK'"
+      - "echo 'Check 2: OK'"
+      - "echo 'Check 3: OK'"
+

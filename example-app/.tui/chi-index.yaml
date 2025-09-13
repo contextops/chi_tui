@@ -1,0 +1,85 @@
+header: "CHI TUI Interactive Reference"
+horizontal_menu:
+  - id: "docs"
+    title: "Docs"
+    # No config - stays on main screen (this file)
+  - id: "lists"
+    title: "Lists"
+    config: "lists.yaml"
+  - id: "forms"
+    title: "Forms"
+    config: "forms.yaml"
+  - id: "panels"
+    title: "Panels"
+    config: "panels.yaml"
+  - id: "progress"
+    title: "Progress"
+    config: "progress.yaml"
+  - id: "advanced"
+    title: "Advanced"
+    config: "advanced.yaml"
+
+menu:
+  - id: "header_docs"
+    title: "── Documentation & Guides ──"
+    widget: "header"
+    
+  - id: "welcome"
+    title: "📖 Welcome & Overview"
+    widget: "markdown"
+    path: "docs/welcome.md"
+    
+  - id: "quick_start"
+    title: "🚀 Quick Start Guide"
+    widget: "markdown"
+    path: "docs/quick_start.md"
+    
+  - id: "widgets_ref"
+    title: "🎯 Widget Reference"
+    widget: "markdown"
+    path: "docs/widgets.md"
+    
+  - id: "yaml_guide"
+    title: "📝 YAML Configuration Guide"
+    widget: "markdown"
+    path: "docs/yaml_guide.md"
+    
+  - id: "header_interactive"
+    title: "── Interactive Examples ──"
+    widget: "header"
+    
+  - id: "try_hello"
+    title: "👋 Try: Simple Command"
+    command: "${APP_BIN} hello --name 'Developer'"
+
+  - id: "header_watchdog_test"
+    title: "── Watchdog Test ──"
+    widget: "header"
+
+  - id: "watchdog_test"
+    title: "🛡️ Watchdog Test: tail -f"
+    widget: "watchdog"
+    pane_b_title: "Watchdog — tail -f demo"
+    # Run both commands in parallel (default). First writes ticks, second tails the file.
+    commands:
+      - "bash -lc 'mkdir -p /tmp; touch /tmp/chi_watchdog_tail.log; while true; do date +%H:%M:%S >> /tmp/chi_watchdog_tail.log; sleep 1; done'"
+      - "bash -lc 'touch /tmp/chi_watchdog_tail.log; tail -n +1 -f /tmp/chi_watchdog_tail.log'"
+
+  - id: "watchdog_external"
+    title: "🛡️ Watchdog External (pgrep/pkill)"
+    widget: "watchdog"
+    pane_b_title: "Watchdog — External (pgrep/pkill)"
+    # External mode: do not spawn processes; detect and manage an external one
+    # Start a process in another terminal:  sleep 99999
+    # This item will show "running (external init)" when detected; press 's' to kill.
+    external_check_cmd: "bash -lc 'pgrep -f \"sleep 99999\" >/dev/null'"
+    external_kill_cmd: "bash -lc 'pkill -f \"sleep 99999\"'"
+
+  - id: "header_resources"
+    title: "── Resources ──"
+    widget: "header"
+    
+  - id: "keyboard_shortcuts"
+    title: "⌨️ Keyboard Shortcuts"
+    widget: "markdown"
+    path: "docs/shortcuts.md"

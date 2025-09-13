@@ -1,0 +1,4 @@
+type: form
+title: "Hello Form (Auto)"
+submit:
+  command: "${APP_BIN} hello"

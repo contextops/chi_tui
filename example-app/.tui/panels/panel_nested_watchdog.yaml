@@ -1,0 +1,16 @@
+type: panel
+layout: horizontal
+size: 1:1
+
+a:
+  type: watchdog
+  title: "Nested A — Watchdog"
+  commands:
+    - "bash -lc 'while true; do echo A $(date +%H:%M:%S); sleep 1; done'"
+
+b:
+  type: watchdog
+  title: "Nested B — Watchdog"
+  commands:
+    - "bash -lc 'while true; do echo B $(date +%H:%M:%S); sleep 1; done'"
+

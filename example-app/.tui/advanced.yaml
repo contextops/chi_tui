@@ -1,0 +1,61 @@
+header: "CHI TUI - Advanced Patterns"
+horizontal_menu:
+  - id: "docs"
+    title: "Docs"
+    config: "chi-index.yaml"
+  - id: "lists"
+    title: "Lists"
+    config: "lists.yaml"
+  - id: "forms"
+    title: "Forms"
+    config: "forms.yaml"
+  - id: "panels"
+    title: "Panels"
+    config: "panels.yaml"
+  - id: "progress"
+    title: "Progress"
+    config: "progress.yaml"
+  - id: "advanced"
+    title: "Advanced"
+    # Current screen
+
+menu:
+  - id: "header_workflows"
+    title: "🧙 Complex Examples"
+    widget: "header"
+    
+  - id: "nested_projects"
+    title: "Nested Projects/Tasks"
+    widget: "lazy_items"
+    command: "${APP_BIN} list-projects"
+    unwrap: "data.items"
+    initial_text: "Press Enter to load projects..."
+    
+  
+  - id: "header_special"
+    title: "🎨 Special Features"
+    widget: "header"
+    
+  - id: "mixed_widgets"
+    title: "Mixed Widget Types"
+    widget: "lazy_items"
+    command: "${APP_BIN} list-mixed-widgets"
+    unwrap: "data.items"
+    initial_text: "Press Enter to load..."
+    
+  
+  
+  - id: "watchdog_stats"
+    title: "Watchdog (stats)"
+    widget: "panel"
+    panel_layout: "vertical"
+    panel_size: "1:3"
+    pane_b_yaml: "panels/panel_b_watchdog_stats.yaml"
+  
+  - id: "nested_watchdog"
+    title: "Nested Panel: Watchdog ×2"
+    widget: "panel"
+    panel_layout: "horizontal"
+    panel_size: "1:1"
+    pane_b_yaml: "panels/panel_nested_watchdog.yaml"
+    

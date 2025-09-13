@@ -1,0 +1,3 @@
+app_bin: example-app
+extra_env:
+  CHI_TUI_JSON: "1"

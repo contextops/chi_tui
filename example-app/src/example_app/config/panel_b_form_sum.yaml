@@ -1,0 +1,10 @@
+type: form
+title: "Sum Numbers"
+fields:
+  - name: "numbers"
+    label: "Numbers"
+    type: "multiselect"
+    options: ["1", "2.5", "3.3", "-4"]
+    required: true
+submit:
+  command: "${APP_BIN} sum-numbers"

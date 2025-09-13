@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/example_app/__main__.py
+src/example_app/cli.py
+src/example_app.egg-info/PKG-INFO
+src/example_app.egg-info/SOURCES.txt
+src/example_app.egg-info/dependency_links.txt
+src/example_app.egg-info/entry_points.txt
+src/example_app.egg-info/requires.txt
+src/example_app.egg-info/top_level.txt

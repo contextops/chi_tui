@@ -1,0 +1,25 @@
+type: form
+title: "Settings (Grouped)"
+fields:
+  - name: "username"
+    label: "Username"
+    type: "text"
+    required: true
+    group: "Account"
+  - name: "email"
+    label: "Email"
+    type: "text"
+    required: true
+    group: "Account"
+  - name: "theme"
+    label: "Theme"
+    type: "select"
+    options: ["system", "light", "dark"]
+    group: "Preferences"
+  - name: "newsletter"
+    label: "Newsletter"
+    type: "checkbox"
+    default: false
+    group: "Preferences"
+submit:
+  command: "${APP_BIN} save-settings"

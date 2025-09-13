@@ -1,0 +1,4 @@
+type: form
+title: "Numeric Params"
+submit:
+  command: "${APP_BIN} test-params"

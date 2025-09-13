@@ -1,0 +1,56 @@
+header: "CHI TUI - Form Patterns"
+horizontal_menu:
+  - id: "docs"
+    title: "Docs"
+    config: "chi-index.yaml"
+  - id: "lists"
+    title: "Lists"
+    config: "lists.yaml"
+  - id: "forms"
+    title: "Forms"
+    # Current screen
+  - id: "panels"
+    title: "Panels"
+    config: "panels.yaml"
+  - id: "progress"
+    title: "Progress"
+    config: "progress.yaml"
+  - id: "advanced"
+    title: "Advanced"
+    config: "advanced.yaml"
+
+menu:
+  - id: "header_basic"
+    title: "📝 Basic Forms"
+    widget: "header"
+    
+  - id: "simple_input"
+    title: "Simple Text Input"
+    widget: "panel"
+    panel_layout: "vertical"
+    panel_size: "1:1"
+    pane_b_yaml: "panels/form_hello.yaml"
+    
+  - id: "multi_field"
+    title: "Multi-field Form"
+    widget: "panel"
+    panel_layout: "horizontal"
+    panel_size: "1:1"
+    pane_b_yaml: "panels/form_settings.yaml"
+    
+  - id: "header_commands"
+    title: "⚡ Example Commands"
+    widget: "header"
+    
+  - id: "validate_text"
+    title: "Validate Username"
+    command: "${APP_BIN} validate-text --username johndoe"
+    
+  - id: "save_settings_cmd"
+    title: "Save Settings"
+    command: "${APP_BIN} save-settings --username john --email john@example.com --newsletter"
+    
+  - id: "choose_tags"
+    title: "Choose Tags"
+    command: "${APP_BIN} choose-tags --tags urgent --tags normal"
+

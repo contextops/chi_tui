@@ -1,0 +1,2 @@
+type: json_viewer
+cmd: "${APP_BIN} list-items"

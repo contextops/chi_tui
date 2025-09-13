@@ -1,0 +1,16 @@
+type: watchdog
+title: "Watchdog Logs"
+commands:
+  - "${APP_BIN} stream-logs --lines 100"
+  - "${APP_BIN} stream-logs --lines 120"
+sequential: false
+auto_restart: false
+max_retries: 0
+restart_delay_ms: 500
+stats:
+  - label: "ERROR"
+    regexp: "\\[ERROR\\]"
+  - label: "WARN"
+    regexp: "\\[WARN\\]"
+  - label: "INFO"
+    regexp: "\\[INFO\\]"

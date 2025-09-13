@@ -1,0 +1,54 @@
+header: "CHI TUI - Progress & Streaming"
+horizontal_menu:
+  - id: "docs"
+    title: "Docs"
+    config: "chi-index.yaml"
+  - id: "lists"
+    title: "Lists"
+    config: "lists.yaml"
+  - id: "forms"
+    title: "Forms"
+    config: "forms.yaml"
+  - id: "panels"
+    title: "Panels"
+    config: "panels.yaml"
+  - id: "progress"
+    title: "Progress"
+    # Current screen
+  - id: "advanced"
+    title: "Advanced"
+    config: "advanced.yaml"
+
+menu:
+  - id: "header_progress"
+    title: "📊 Progress Indicators"
+    widget: "header"
+    
+  - id: "simple_progress"
+    title: "Simple Progress Bar"
+    stream: true
+    command: "${APP_BIN} simulate-progress --steps 5 --delay-ms 500"
+    
+  - id: "detailed_progress"
+    title: "Detailed Progress (with %)"
+    stream: true
+    command: "${APP_BIN} simulate-progress --steps 10 --delay-ms 300"
+    
+  - id: "multi_step"
+    title: "Multi-step Process"
+    stream: true
+    command: "${APP_BIN} simulate-progress --steps 20 --delay-ms 200"
+    
+  - id: "header_streaming"
+    title: "📡 Streaming Output"
+    widget: "header"
+    
+  - id: "stream_logs"
+    title: "Stream Log Output"
+    stream: true
+    command: "${APP_BIN} stream-logs --lines 50"
+    
+  - id: "slow_list"
+    title: "Slow Loading List (5s)"
+    command: "${APP_BIN} list-items-slow"
+

@@ -1,0 +1,4 @@
+type: form
+title: "Sum Numbers (Array)"
+submit:
+  command: "${APP_BIN} sum-numbers"

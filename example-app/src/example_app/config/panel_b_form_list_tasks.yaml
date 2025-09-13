@@ -1,0 +1,10 @@
+type: form
+title: "Tasks Form"
+fields:
+  - name: "project"
+    label: "Project"
+    type: "select"
+    options: ["alpha", "bravo"]
+    required: true
+submit:
+  command: "${APP_BIN} list-tasks"

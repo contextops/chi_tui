@@ -1,0 +1,9 @@
+› Pick *: 2 selected
+    [x] Charlie
+  › [ ] Delta
+    [ ] Echo
+    [x] Foxtrot
+    [ ] Golf
+    [ ] Hotel
+    [ ] India
+    [ ] Juliet

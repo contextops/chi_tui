@@ -1,0 +1,211 @@
+Metadata-Version: 2.4
+Name: example-app
+Version: 0.0.1
+Summary: Example app using chi-tui-sdk
+Author-email: CHI TUI <devnull@example.com>
+License: Apache-2.0 (see LICENSE)
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: chi-sdk>=0.0.1
+Requires-Dist: click>=8
+Requires-Dist: pydantic>=2
+Dynamic: license-file
+
+# CHI TUI Interactive Reference
+
+A comprehensive, interactive reference implementation demonstrating all CHI TUI capabilities.
+This app serves as both a learning resource and a pattern library for developers.
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Quick Start
+
+Launch the interactive TUI:
+
+```bash
+example-app ui
+```
+
+Ensure TUI binary exists (choose one):
+
+```bash
+chi-admin ensure-chi --compile   # build from local Rust sources
+# or
+chi-admin ensure-chi --download  # download a prebuilt binary
+```
+
+Navigate with F1-F6 keys to explore different categories:
+
+- **[F1] Docs** - Built-in documentation and guides
+- **[F2] Lists** - All list patterns and menu types
+- **[F3] Forms** - Input forms and validation
+- **[F4] Panels** - Split-view layouts
+- **[F5] Progress** - Streaming and async operations
+- **[F6] Advanced** - Complex patterns and workflows
+
+## Features
+
+### 📚 Integrated Documentation
+- Welcome guide and overview
+- Quick start tutorial
+- Widget reference
+- YAML configuration guide
+- Keyboard shortcuts
+
+### 📋 List Patterns
+- Static and dynamic menus
+- Nested/hierarchical lists
+- Lazy loading vs auto-loading
+- Master-detail views
+- Streaming updates
+- Large dataset handling
+
+### 📝 Form Components
+- Text, password, textarea inputs
+- Number inputs and validation
+- Checkboxes and select dropdowns
+- Multi-field forms
+- Grouped fields
+- Dynamic forms
+- Auto-submit patterns
+
+### 🖼️ Panel Layouts
+- Horizontal/vertical splits
+- Different size ratios (1:1, 1:2, 2:1, etc.)
+- Nested panels
+- Dynamic content switching
+- Master-detail pattern
+
+### 📊 Progress & Streaming
+- Progress bars with percentages
+- Streaming log output
+- Real-time data updates
+- Background tasks
+- Cancellable operations
+
+### 🚀 Advanced Patterns
+- Multi-step wizards
+- State machines
+- CRUD operations
+- Complex validation
+- API integration demos
+- Performance patterns
+
+## CLI Commands
+
+### Basic Commands
+```bash
+# Simple greeting
+example-app hello --name World
+
+# List items
+example-app list-items
+
+# Sum numbers
+example-app sum-numbers --numbers 1 --numbers 2 --numbers 3
+```
+
+### New Reference Commands
+```bash
+# Render markdown documentation
+example-app render-markdown --file docs/guide.md
+
+# Show keyboard shortcuts
+example-app show-shortcuts
+
+# Stream simulated logs
+example-app stream-logs --lines 50
+
+# Simulate progress
+example-app simulate-progress --steps 10
+```
+
+### JSON Output
+All commands support JSON output for automation:
+
+```bash
+example-app --json list-items
+```
+
+## File Structure
+
+```
+.tui/
+├── chi-index.yaml   # Entry screen (F1)
+├── lists.yaml       # F2: List patterns
+├── forms.yaml       # F3: Form examples
+├── panels.yaml      # F4: Panel layouts
+├── progress.yaml    # F5: Progress patterns
+├── advanced.yaml    # F6: Advanced features
+├── panels/          # Reusable panel configs
+│   ├── form_*.yaml  # Form configurations
+│   ├── demo_*.yaml  # Demo panels
+│   └── ...
+└── docs/            # Markdown documentation
+    ├── welcome.md
+    ├── quick_start.md
+    ├── widgets.md
+    └── yaml_guide.md
+```
+
+## Customization
+
+### Modify Menus
+Edit `.tui/*.yaml` files (e.g., `chi-index.yaml`, `lists.yaml`) to customize menus and navigation.
+
+### Add New Commands
+1. Add command to `src/example_app/cli.py`
+2. Use `@chi_command` decorator
+3. Define input/output models with Pydantic
+
+### Create New Screens
+1. Create new YAML in `.tui/`
+2. Add to horizontal menu in other screens
+3. Define menu items and widgets
+
+## Development
+
+### Run Tests
+```bash
+pytest
+```
+
+### Check JSON Schema
+```bash
+example-app schema <command-name>
+```
+
+### Test Headless Mode
+```bash
+CHI_TUI_HEADLESS=1 CHI_TUI_TICKS=10 example-app ui
+```
+
+## Learning Path
+
+1. **Start with F1 (Docs)** - Read the welcome guide
+2. **Explore F2 (Lists)** - Understand menu patterns
+3. **Try F3 (Forms)** - Learn input handling
+4. **Study F4 (Panels)** - Master layouts
+5. **Watch F5 (Progress)** - See async patterns
+6. **Dive into F6 (Advanced)** - Complex workflows
+
+Each section has examples you can copy and adapt for your own applications.
+
+## Tips
+
+- Press numbers `[1-9]` for quick menu navigation
+- Use `Tab` to switch between panels
+- Press `Esc` to go back
+- Press `q` to quit
+- Check `.tui/` for YAML examples
+- All patterns are production-ready
+
+## License
+
+MIT
