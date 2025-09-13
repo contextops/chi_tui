@@ -6,7 +6,7 @@ pub trait Detector: Send + Sync {
 }
 
 pub struct CommandDetector {
-    pub cmd: String,
+    cmd: String,
 }
 
 impl CommandDetector {
