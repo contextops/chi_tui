@@ -5,6 +5,7 @@ pub trait Detector: Send + Sync {
     fn is_running(&self) -> bool;
 }
 
+#[allow(dead_code)]
 pub struct CommandDetector {
     cmd: String,
 }
